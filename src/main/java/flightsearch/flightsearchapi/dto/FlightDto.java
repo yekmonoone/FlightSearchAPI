@@ -14,7 +14,6 @@ import java.util.Date;
 @Setter
 public class FlightDto {
 
-    private Long id;
     private String departureAirport;
     private String arrivalAirport;
     private Date departureDate;
