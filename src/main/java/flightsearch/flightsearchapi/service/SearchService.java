@@ -24,8 +24,7 @@ public class SearchService {
             SearchResponseDto tempSearchResponseDto = new SearchResponseDto();
             tempSearchResponseDto.setArrivalAirport(flight.getArrivalAirport());
             tempSearchResponseDto.setDepartureAirport(flight.getDepartureAirport());
-            tempSearchResponseDto.setFlightDateTime(flight.getDepartureDateTime());
-
+            tempSearchResponseDto.setFlightDateTime(flight.getDepartureDate());
             resultFlight.add(tempSearchResponseDto);
 
             if (flight.getArrivalDate() != null) {

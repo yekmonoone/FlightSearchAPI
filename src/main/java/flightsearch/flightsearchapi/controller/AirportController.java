@@ -14,6 +14,7 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
+
     @GetMapping("/{id}")
     public Optional<Airport> getAirportById(@PathVariable Long id) {
         return airportService.getAirportById(id);

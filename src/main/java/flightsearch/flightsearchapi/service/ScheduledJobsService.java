@@ -35,9 +35,9 @@ public class ScheduledJobsService {
                 Flight tempFlight = new Flight();
 
                 tempFlight.setDepartureAirport(dummyFlights[i].getDepartureAirport());
-                tempFlight.setDepartureDate(dummyFlights[i].getDepartureDate());
+                tempFlight.setDepartureDate(dummyFlights[i].getDepartureDateTime());
                 tempFlight.setArrivalAirport(dummyFlights[i].getArrivalAirport());
-                tempFlight.setArrivalDate(dummyFlights[i].getArrivalDate());
+                tempFlight.setArrivalDate(dummyFlights[i].getArrivalDateTime());
                 tempFlight.setPrice(dummyFlights[i].getPrice());
 
                 finalFlights[i] = tempFlight;

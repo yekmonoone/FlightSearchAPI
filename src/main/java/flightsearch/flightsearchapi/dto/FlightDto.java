@@ -1,10 +1,12 @@
 package flightsearch.flightsearchapi.dto;
 
+import flightsearch.flightsearchapi.entity.Airport;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -14,10 +16,13 @@ import java.util.Date;
 @Setter
 public class FlightDto {
 
-    private String departureAirport;
-    private String arrivalAirport;
-    private Date departureDate;
-    private Date arrivalDate;
+    private Airport departureAirport;
+    private Airport arrivalAirport;
+    private LocalDateTime departureDateTime;
+    private LocalDateTime arrivalDateTime;
     private double price;
+
+
+
 
 }

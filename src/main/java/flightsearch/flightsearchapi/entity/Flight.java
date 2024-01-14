@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -16,21 +17,23 @@ import java.util.Date;
 @Setter
 public class Flight {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "dep_airport")
-    private String departureAirport;
+    @ManyToOne
+    @JoinColumn(name = "departure_airport_id")
+    private Airport departureAirport;
 
-    @Column(name = "arr_airport")
-    private String arrivalAirport;
+    @ManyToOne
+    @JoinColumn(name = "arrival_airport_id")
+    private Airport arrivalAirport;
 
-    @Column(name = "dep_date")
-    private Date departureDate;
+    private LocalDateTime departureDate;
 
-    @Column(name = "arr_date")
-    private Date arrivalDate;
+    @Column(nullable = true)
+    private LocalDateTime arrivalDate;
 
     @Column(name = "price")
     private double price;
@@ -38,4 +41,7 @@ public class Flight {
     @ManyToOne
     @JoinColumn(name = "airport_id")
     private Airport departureAirportObj;
+
+
+
 }

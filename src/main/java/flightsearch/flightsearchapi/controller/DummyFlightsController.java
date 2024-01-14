@@ -16,7 +16,7 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/dummy")
-public class DummyController {
+public class DummyFlightsController {
 
     @Autowired
     private AirportService airportService;
@@ -41,13 +41,13 @@ public class DummyController {
             LocalDateTime now = LocalDateTime.now();
             LocalDateTime departureDateTime = now.plusDays(rd.nextInt(10)).plusHours(rd.nextInt(5)).plusMinutes(rd.nextInt(5)).withSecond(0).withNano(0);
 
-            dummyFlightDto.setDepartureDate(departureDateTime);
+            dummyFlightDto.setDepartureDateTime(departureDateTime);
 
             int forArrivalProbability = rd.nextInt(2);
 
             if (forArrivalProbability == 1) {
                 LocalDateTime returnDateTime = departureDateTime.plusDays(rd.nextInt(10)).plusHours(rd.nextInt(5)).plusMinutes(rd.nextInt(5)).withSecond(0).withNano(0);
-                dummyFlightDto.setArrivalDate(returnDateTime);
+                dummyFlightDto.setArrivalDateTime(returnDateTime);
             }
 
             dummyFlightDto.setPrice(rd.nextInt(1, 1000));
